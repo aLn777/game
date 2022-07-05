@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html { 
+    font-size: 62.5%; 
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+body {
+    width: 1000px;
+    height: 700px; 
+    margin-top: 40px;
+    background-color: #00113d;
+    background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+    /* margin-left: 220px; */
+}
+
+.selectDisable {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.screen--start {
+    background-image: url('../images/level1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ui {
+    display: none;
+    text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+    padding-left: 8px;
+    font-size: 2rem;
+    font-family: 'Press Start 2P', cursive;
+    z-index: 2;
+}
+
+.player-info {
+    text-align: left;
+    position: absolute;
+    top: 94.8%;
+    cursor: url("../images/xhair.png") 62 59, crosshair;
+}
+
+.score {
+    text-align: left;
+    position: absolute;
+    top: 90.2%;
+    cursor: url("../images/xhair.png") 62 59, crosshair;
+}
+
+.enemy {
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+
+.enemy-w {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+}
+
+.spawn , .one, .two, .three {
+    display: inline-block;
+    width: 4.5%; /* 6.5%*/
+    height: 16%; /*19% */ 
+    position: relative; 
+    z-index: 2;
+}
+
+.one {
+    position: absolute;
+    top: 44%;
+    left: 7%;
+}
+
+.two {
+    position: absolute; 
+    top: 40%;
+    left: 17.5%; 
+}
+
+.three {
+    position: absolute;
+    top: 39%;
+    left: 78.5%;
+}
+
+#spawn-3 {
+    position: absolute;
+    top: 11%;
+    left: 72%;
+}
+
+#spawn-4 {
+    position: absolute;
+    top: 10%;
+    left: 82.2%;
+}
+
+#overlay {
+    display: none;
+    position: absolute;
+    width: 1012px;
+    height: 606px;
+    background-color: rgba(255, 0, 0, 0.6);
+    cursor: url("../images/xhair.png") 62 59, crosshair;
+    z-index: 1;
+    /* animation: shot .5s linear 1; */
+    opacity: 1;
+}
+
+#overlay-2 {
+    display: none;
+    position: absolute;
+    width: 1012px;
+    height: 606px;
+    background-color: rgb(94, 0, 0);
+    cursor: url("../images/xhair.png") 62 59, crosshair;
+    z-index: 1;
+    animation: ending .5s linear 1;
+    opacity: 1;
+}
+
+@keyframes ending {
+    0% {
+        opacity: 0; 
+    }
+}
+
+#screen {
+    width: 100%;
+    height: 85%;
+    border: .6rem solid black;
+    margin-top: 55px;
+    margin: 0 auto;
+    cursor: url("../images/xhair.png") 62 59, crosshair;
+    text-align: center;
+    position: relative;
+    background-color: #1c212b;
+    /* background-image: url("https://www.transparenttextures.com/patterns/cartographer.png"); */
+    /* justify-content: center; */
+}
+
+#time {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.2rem;
+    padding-top: 5px;
+    text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+#death-text {
+    display: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.2rem;
+    top: 35%; /* 35% */
+    position: absolute;
+    left: 43%;
+    color: rgb(81, 255, 0);
+    opacity: 1;
+    z-index: 3;
+    /* animation: slidein1 1s linear 1; */
+}
+
+@keyframes slidein1 {
+    100% {
+        left: 43%;
+    }
+}
+
+
+#death-text2 {
+    display: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.2rem;
+    top: 50.5%;
+    position: absolute;
+    left: 24.5%;
+    color: rgb(81, 255, 0);
+    opacity: 1;
+    z-index: 3;
+    /* animation: slidein2 1s linear 1; */
+}
+
+
+#reload-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.2rem;
+    top: 50%;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+    position: absolute;
+    left: 30.5%;
+    color: rgb(180, 180, 0);
+    animation: blinker 1s linear infinite;
+    opacity: 1;
+    z-index: 2;
+    /* margin: 0 auto; */
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+#start-btn {
+    position: absolute;
+    cursor: url("../images/xhair.png") 62 59, crosshair;
+    font-weight: 700;
+    font-size: 1.6rem;
+    left: 45%;
+    top: 66%;
+    width: 12%;
+    height: 8%;
+    background-color: rgb(70, 70, 70);
+    border: .2rem solid rgb(70, 70, 70);
+    border-radius: 15px;
+    color: white;
+}
+
+#start-btn:hover {
+    background-color: white;
+    color:  rgb(92, 92, 92);
+}
+
+#gun {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    /* margin-left: 40%; */
+    top: 60%;
+    left: 55%;
+    /* margin-top: 18.25%;  */
+}
+
+#rules {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3.5rem;
+    top: 40%;
+    position: absolute;
+    left: 1.8%;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #5e5e5e,
+    1px -1px 0 #5e5e5e,
+    -1px 1px 0 #5e5e5e,
+    1px 1px 0 #5e5e5e,;
+}
+
+#ak {
+    width: 110%;
+    height: 100%;
+    cursor: url("../images/xhair.png") 62 59, crosshair;
+}
